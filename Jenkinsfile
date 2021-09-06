@@ -42,7 +42,8 @@ node ('slave1') {
  ])
     //
       dir ('build') {
-    echo "Source "  
+    echo "Source " 
+    echo requestWithNumber $BRANCH_NAME
     git 'https://github.com/beam2895/Mastering-Python-Scripting-for-System-Administrators-'
       }
   }
