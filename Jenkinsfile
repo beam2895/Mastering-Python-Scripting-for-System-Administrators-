@@ -1,3 +1,4 @@
+import groovy.json.JsonSlurper
 node ('slave1') {
 
   def compiled = true
