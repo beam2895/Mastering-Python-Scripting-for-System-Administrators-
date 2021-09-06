@@ -10,7 +10,6 @@ node ('slave1') {
    [$class: 'GenericTrigger',
     genericVariables: [
      [key: 'ref', value: '$.ref']
-     ]
     ]
 
    ]
