@@ -45,7 +45,7 @@ node ('slave1') {
     //
       dir ('build') {
     echo "Source "  
-      echo requestWithString $requestWithString
+          echo requestWithString $requestWithString
     git 'https://github.com/beam2895/Mastering-Python-Scripting-for-System-Administrators-'
       }
   }
