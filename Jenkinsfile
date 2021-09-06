@@ -1,24 +1,26 @@
-import groovy.json.JsonSlurper
 node ('slave1') {
+//
+    properties([
+        pipelineTriggers([
+            [$class: 'GenericTrigger',
+                genericVariables: [
+                    [expressionType: 'JSONPath', key: 'reference', value: '$.ref'],
+                    [expressionType: 'JSONPath', key: 'repository', value: '$.repository.full_name']
+                ],
+                genericRequestVariables: [],
+                genericHeaderVariables: []
+            ]
+        ])
+    ])
 
+//
   def compiled = true
   stage('Source') {
       cleanWs()
     //
-     properties([
-  pipelineTriggers([
-   [$class: 'GenericTrigger',
-    genericVariables: [
-     [key: 'ref', value: '$.ref']
-    ]
-
-   ]
-  ])
- ])
     //
       dir ('build') {
     echo "Source " 
-    echo "$ref"
    echo "source"
 
     git 'https://github.com/beam2895/Mastering-Python-Scripting-for-System-Administrators-'
