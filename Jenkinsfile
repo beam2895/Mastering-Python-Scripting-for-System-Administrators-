@@ -20,11 +20,9 @@ node ('slave1') {
     ],
     genericRequestVariables: [
      [key: 'requestWithNumber', regexpFilter: '[^0-9]'],
-     [key: 'requestWithString', regexpFilter: '']
     ],
     genericHeaderVariables: [
      [key: 'headerWithNumber', regexpFilter: '[^0-9]'],
-     [key: 'headerWithString', regexpFilter: '']
     ],
 
     causeString: 'Triggered on $ref',
