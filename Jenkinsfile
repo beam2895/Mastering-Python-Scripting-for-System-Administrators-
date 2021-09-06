@@ -3,6 +3,19 @@ node ('slave1') {
   def compiled = true
   stage('Source') {
       cleanWs()
+    //
+    def object =  new JsonSlurper().parseText("$payload")
+    // reading the JSON to see if branch is master or any other
+    String refs= new JsonBuilder("$object.ref" ).toPrettyString()
+    println "$refs"
+    String[] arrBranch =refs.split("/")
+    String branch =arrBranch[2]
+    println "$branch"
+    if (branch=="master")
+        echo "deploy to PROD"
+    else
+    echo "deploy to staging"
+    //
       dir ('build') {
     echo "Source"  
     git 'https://github.com/beam2895/Mastering-Python-Scripting-for-System-Administrators-'
