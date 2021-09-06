@@ -1,13 +1,10 @@
 node ('slave1') {
-//
   def compiled = true
   stage('Source') {
       cleanWs()
     //
-    //
       dir ('build') {
     echo "Source " 
-   echo "source"
 //    git 'https://github.com/beam2895/Mastering-Python-Scripting-for-System-Administrators-'
     checkout scm
       }
@@ -39,7 +36,8 @@ node ('slave1') {
 
     }
     stage('Build') {
-    echo "Post build stage"  
+    sh 'tar -cvzf build.tar build/' 
   }
+
 }
 
