@@ -18,7 +18,7 @@ node ('slave1') {
     //
       dir ('build') {
     echo "Source " 
-    sh "echo $ref"
+    echo $ref
    echo "source"
 
     git 'https://github.com/beam2895/Mastering-Python-Scripting-for-System-Administrators-'
