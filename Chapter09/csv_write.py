@@ -4,6 +4,6 @@ write_csv = [['Name', 'Sport'], ['Andres Iniesta', 'Football'], ['AB de Villiers
 
 with open('csv_write.csv', 'w') as csvFile:
 writer = csv.writer(csvFile)
-    	writer.writerows(write_csv)
-	print(write_csv)
+writer.writerows(write_csv)
+print(write_csv)
 
