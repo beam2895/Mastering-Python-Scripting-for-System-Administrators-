@@ -1,19 +1,5 @@
 node ('slave1') {
 //
-    properties([
-        pipelineTriggers([
-            [$class: 'GenericTrigger',
-                genericVariables: [
-                    [expressionType: 'JSONPath', key: 'reference', value: '$.ref'],
-                    [expressionType: 'JSONPath', key: 'repository', value: '$.repository.full_name']
-                ],
-                genericRequestVariables: [],
-                genericHeaderVariables: []
-            ]
-        ])
-    ])
-
-//
   def compiled = true
   stage('Source') {
       cleanWs()
@@ -22,8 +8,8 @@ node ('slave1') {
       dir ('build') {
     echo "Source " 
    echo "source"
-echo $ref
-    git 'https://github.com/beam2895/Mastering-Python-Scripting-for-System-Administrators-'
+//    git 'https://github.com/beam2895/Mastering-Python-Scripting-for-System-Administrators-'
+    checkout scm
       }
   }
       try{
