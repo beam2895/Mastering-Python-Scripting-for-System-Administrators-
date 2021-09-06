@@ -5,17 +5,7 @@ node ('slave1') {
   stage('Source') {
       cleanWs()
     //
-    def object =  new JsonSlurper().parseText("$payload")
-    // reading the JSON to see if branch is master or any other
-    String refs= new JsonBuilder("$object.ref" ).toPrettyString()
-    println "$refs"
-    String[] arrBranch =refs.split("/")
-    String branch =arrBranch[2]
-    println "$branch"
-    if (branch=="master")
-        echo "deploy to PROD"
-    else
-    echo "deploy to staging"
+    echo "$payload"
     //
       dir ('build') {
     echo "Source"  
