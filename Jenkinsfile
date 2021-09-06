@@ -3,7 +3,6 @@ node ('slave1') {
   def compiled = true
   stage('Source') {
       
-properties([pipelineTriggers([[$class: 'BitBucketTrigger'], pollSCM('H/15 * * * *')])])
       dir ('build') {
     echo "Source"  
     git 'https://github.com/beam2895/Mastering-Python-Scripting-for-System-Administrators-'
