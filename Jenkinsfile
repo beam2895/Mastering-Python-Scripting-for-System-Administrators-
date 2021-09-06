@@ -1,4 +1,7 @@
 node ('slave1') {
+triggers {
+githubPush()
+}
     def compiled = true
   stage('Source') {
       
@@ -38,3 +41,4 @@ node ('slave1') {
     echo "Post build stage"  
   }
 }
+
