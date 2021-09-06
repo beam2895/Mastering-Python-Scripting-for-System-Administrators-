@@ -9,34 +9,10 @@ node ('slave1') {
   pipelineTriggers([
    [$class: 'GenericTrigger',
     genericVariables: [
-     [key: 'ref', value: '$.ref'],
-     [
-      key: 'before',
-      value: '$.before',
-      expressionType: 'JSONPath', //Optional, defaults to JSONPath
-      regexpFilter: '', //Optional, defaults to empty string
-      defaultValue: '' //Optional, defaults to empty string
+     [key: 'ref', value: '$.ref']
      ]
-    ],
-    genericRequestVariables: [
-     [key: 'requestWithNumber', regexpFilter: '[^0-9]'],
-    ],
-    genericHeaderVariables: [
-     [key: 'headerWithNumber', regexpFilter: '[^0-9]'],
-    ],
+    ]
 
-    causeString: 'Triggered on $ref',
-
-    token: 'abc123',
-    tokenCredentialId: '',
-
-    printContributedVariables: true,
-    printPostContent: true,
-
-    silentResponse: false,
-
-    regexpFilterText: '$ref',
-    regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
    ]
   ])
  ])
