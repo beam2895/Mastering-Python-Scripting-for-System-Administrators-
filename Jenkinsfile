@@ -2,7 +2,7 @@ node ('slave1') {
 
   def compiled = true
   stage('Source') {
-      deleteDir('build')      
+      cleanWs()
       dir ('build') {
     echo "Source"  
     git 'https://github.com/beam2895/Mastering-Python-Scripting-for-System-Administrators-'
