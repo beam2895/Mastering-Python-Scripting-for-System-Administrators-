@@ -54,7 +54,9 @@ sshPublisher(publishers:
         verbose: true)])
 
     if (env.BRANCH_NAME == "master") {
-        echo "master branch detected, deploying on production too"
+        ansiColor('vga') {
+                       echo e.toString()
+          }
 
     sshPublisher(publishers:
     [sshPublisherDesc(configName: 'production', transfers:
@@ -73,8 +75,6 @@ sshPublisher(publishers:
         useWorkspaceInPromotion: false,
         verbose: true)])
 
-
       }
-
   }
 }
