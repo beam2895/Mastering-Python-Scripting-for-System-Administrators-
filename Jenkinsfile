@@ -55,7 +55,7 @@ sshPublisher(publishers:
 
     if (env.BRANCH_NAME == "master") {
         ansiColor('vga') {
-                       echo e.toString()
+                        echo '\033[42m\033[97mMaster Branch detected, deploying on production too \033[0m'
           }
 
     sshPublisher(publishers:
